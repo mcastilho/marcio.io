@@ -88,7 +88,7 @@ type Hash interface {
 
 ### The Approach
 
-Therefore, we could create create a ```MultiWriter``` that is going to write to multiple Hash implementations only performing a single read pass through the original file, as you can see in the code below:
+Therefore, we could create a ```MultiWriter``` that is going to write to multiple Hash implementations only performing a single read pass through the original file, as you can see in the code below:
 
 ```go
 func CalculateBasicHashes(rd io.Reader) HashInfo {
