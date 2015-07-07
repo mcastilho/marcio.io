@@ -1,0 +1,43 @@
+{{ template "theme/chrome/head.html" . }}
+<body>
+
+  {{ template "theme/chrome/sidebar.html" . }}
+
+  <div class="content container">
+    <div class="post">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+    {{if .Params.series}}
+	    {{ $name := index .Params.series 0 }}
+    	<p class="seriesname">Series: <a href="{{.Site.BaseURL}}/series/{{$name | urlize}}">{{$name}}</a></p>
+    {{end}}
+    {{ .Content }}
+
+
+    {{ if .Params.series }}
+        {{ $link := .Permalink }}
+	    {{ $name := index .Params.series 0 }}
+	    <hr/>
+    	<p><a href="" id="series"></a>This is a post in the <b>{{$name}}</b> series.<br/>
+    	Other posts in this series:</p>
+        {{ $name := $name | urlize }}
+        {{ $series := index .Site.Taxonomies.series $name }}
+        <ul class="series">
+        {{ range $series.Pages }}
+            <li>{{.Date.Format "Jan 02, 2006"}} -
+            {{ if eq .Permalink $link }}
+                {{.LinkTitle}}
+            {{else}}
+                <a href="{{.Permalink}}">{{.LinkTitle}} </a>
+            {{end}}
+            </li>
+        {{end}}
+        </ul>
+	{{end}}
+
+    {{ template "partials/comments.html" . }}
+</div>
+</div>
+
+</body>
+</html>

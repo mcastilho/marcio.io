@@ -1,0 +1,25 @@
+baseurl = "http://marcio.io"
+languageCode = "en-us"
+title = "marcio.io"
+theme = "hyde"
+copyright = "Marcio Castilho"
+
+[Author]
+	name = "Marcio Castilho"
+
+[Permalinks]
+	blog = "/:year/:month/:filename/"
+	code = "/:filename/"
+
+[Taxonomies]
+	tag = "tags"
+	series = "series"
+	series-desc = "series-desc"
+
+[params]
+	description = "stuff by Marcio Castilho"
+	linkedin = "https://www.linkedin.com/in/mcastilho"
+	facebook = "https://www.facebook.com/mcastilho"
+	twitter = "https://twitter.com/mcastilho"
+	github = "https://github.com/mcastilho"
+	disqus = "marciocastilho"
