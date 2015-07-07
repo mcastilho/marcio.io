@@ -9,6 +9,9 @@ After years of using Integrated Development Environments (IDE) during my Windows
 
 My initial transition in the Mac programming world was using excellent Textmate editor at the time. A fast coding editor with great highlight syntax, extension modules and code snippets that made me feel productive again. After the decline of TextMate several years ago, since the application wasn't getting software updates, a lot of people ended up switching to Sublime Text editor and the traditional VIM editor.
 
+I have tried Atom when it first came out a while back, but it wasn't ready for prime time. When they officially launched version 1.0 a few days ago, I have decided to give it another try. And I am really happy that I did.
+
+https://atom.io/
 
 ## Installing a Theme
 
