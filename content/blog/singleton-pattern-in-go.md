@@ -3,6 +3,7 @@ date = "2015-07-12T13:50:25-04:00"
 title = "Singleton Pattern in Go"
 type = "post"
 tags = [ "golang", "go", "singleton", "thread-safety" ]
+ogimage = "/img/gopher.png"
 +++
 
 The Go Language growth has been phenomenal in the last few years, and is attracting language converts from all walks of life. There has been a lot articles recently about companies switching from Ruby, and experiencing the new world of Go and it's parallel and concurrent approach to problems.  
