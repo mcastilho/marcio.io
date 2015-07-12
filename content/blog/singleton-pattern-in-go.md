@@ -32,7 +32,7 @@ func GetInstance() *singleton {
 }
 ```
 
-In the above scenario, multiple go routines could evaluate the first check and they would all create an intance of the ```singleton``` type and override each other. There is no guarantee which instance it will be returned here, and other further operations on the instance can be come inconsistent with the expectations by the developer.
+In the above scenario, multiple go routines could evaluate the first check and they would all create an instance of the ```singleton``` type and override each other. There is no guarantee which instance it will be returned here, and other further operations on the instance can be come inconsistent with the expectations by the developer.
 
 The reason this is bad is that if references to the singleton instance are being held around through the code, there could be potentially multiple instances of the type with different states, generating potential different code behaviours. It also becomes a real nightmare during debugging and becomes really hard to spot the the bug, since that at debugging time nothing really appears to be wrong due to the run-time pauses minimizing the potential of a non-thread-safe execution, easily hiding the problem from the developer.
 
