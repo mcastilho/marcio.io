@@ -80,7 +80,7 @@ If we apply this pattern to our ```GetInstance()``` method we would have somethi
 
 ```go
 func GetInstance() *singleton {
-    if instance == nil {
+    if instance == nil {     // <-- Not yet perfect. since it's not fully atomic
         mu.Lock()
         defer mu.Unlock()
 
@@ -92,9 +92,9 @@ func GetInstance() *singleton {
 }
 ```
 
-By far this is the best approach to this problem, ensuring thread-safety and minimizing the contention.
+This is the best approach, but still is not perfect. Since due to compiler optimizations there is not an atomic check on the instance store state. With all the technical considerations this is still not perfect. But it is much better than the initial approach.
 
-But... I believe we could do better by looking into how the Go Language and standard library implements go routines syncronization.
+But... I believe we could do better by looking into how the Go Language and standard library implements go routines synchronization.
 
 ### An Idiomatic Singleton Approach in Go
 
