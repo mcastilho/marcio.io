@@ -28,7 +28,7 @@ Here is how it looks like on my environment:
 #### monokai-seti
 - https://atom.io/packages/monokai-seti
 
-## Installing a Progammers Font
+## Installing a Programmers Font
 
 One of the first things I wanted to do when opening Atom the first time, was to install and use my preferred programming font. I have been using the free "Inconsolata" font for a while.
 

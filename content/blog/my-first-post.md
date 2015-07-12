@@ -11,7 +11,7 @@ Until I have recently discovered Hugo. It's really awesome and easiy to setup, I
 Check it out at:
 http://gohugo.io
 
-Let's see if I can keep up with this from now on. Definetely the barrier that was holding me back is gone.
+Let's see if I can keep up with this from now on. Definitely the barrier that was holding me back is gone.
 
 Cheers,  
 Marcio
