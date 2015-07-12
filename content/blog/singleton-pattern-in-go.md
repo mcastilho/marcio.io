@@ -92,7 +92,34 @@ func GetInstance() *singleton {
 }
 ```
 
-This is the best approach, but still is not perfect. Since due to compiler optimizations there is not an atomic check on the instance store state. With all the technical considerations this is still not perfect. But it is much better than the initial approach.
+This is a better approach, but still is **not** perfect. Since due to compiler optimizations there is not an atomic check on the instance store state. With all the technical considerations this is still not perfect. But it is much better than the initial approach.
+
+But using the ```sync/atomic``` package, we can atomically load and set a flag that will indicate if we have initialized or not our instance.
+
+```go
+import "sync"
+import "sync/atomic"
+
+var initialized uint32
+...
+
+func GetInstance() *singleton {
+
+    if atomic.LoadUInt32(&initialized) == 1 {
+		return instance
+	}
+
+    mu.Lock()
+    defer mu.Unlock()
+
+    if initialized == 0 {
+         instance = &singleton{}
+         atomic.StoreUint32(&initialized, 1)
+    }
+
+    return instance
+}
+```
 
 But... I believe we could do better by looking into how the Go Language and standard library implements go routines synchronization.
 
@@ -126,13 +153,13 @@ type Once struct {
 // without calling f.
 //
 func (o *Once) Do(f func()) {
-	if atomic.LoadUint32(&o.done) == 1 {
+	if atomic.LoadUint32(&o.done) == 1 { // <-- Check
 		return
 	}
 	// Slow-path.
-	o.m.Lock()
+	o.m.Lock()                           // <-- Lock
 	defer o.m.Unlock()
-	if o.done == 0 {
+	if o.done == 0 {                     // <-- Check
 		defer atomic.StoreUint32(&o.done, 1)
 		f()
 	}
@@ -169,6 +196,9 @@ func GetInstance() *singleton {
     return instance
 }
 ```
+
+Therefore, using the ```sync.Once``` package is the preferred way of implementing this safely, in similar way that Objective-C and Swift (Cocoa) implements the ```dispatch_once``` metod to perform similar initialization.
+
 
 ### Conclusion
 
