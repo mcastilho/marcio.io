@@ -41,8 +41,6 @@ Below is a stripped down version of our telemetry data so you guys can better un
         "ISP": "Telecom Italia"
     },
     "Region": {
-        "Lat": "44.416698",
-        "Long": "8.950000",
         "Continent": "EU",
         "Country": "IT",
         "Region": "08",
