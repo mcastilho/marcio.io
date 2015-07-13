@@ -2,6 +2,7 @@
 date = "2015-07-07T11:14:06-04:00"
 title = "Calculating Multiple File Hashes in a Single Pass"
 type = "post"
+ogtype = "article"
 tags = [ "golang", "go" ]
 +++
 

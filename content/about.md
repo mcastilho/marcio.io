@@ -14,6 +14,8 @@ I work as the Principal Architect for Malwarebytes, helping our team fight compu
 
 For the last 10 years or so, I have been working mostly on the Mac OS X, developing software using Ruby on Rails, Objective-C and Swift, and Golang (Go) acting as an architect for very large web-based systems and mobile applications.
 
+I am originally from Brazil and moved to the United States about 14 years ago. I used to publish a magazine in the late 90's called "Delphi Journal" with technical articles about Borland Delphi programming language.
+
 This is my new spot to share my thoughts and findings about programming and interesting tidbits of technology.
 
 Thanks,  

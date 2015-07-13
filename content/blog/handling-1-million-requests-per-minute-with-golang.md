@@ -3,7 +3,7 @@ date = "2015-07-06T16:49:35-04:00"
 title = "Handling 1 Million Requests per Minute with Go"
 type = "post"
 ogimage = "/img/elasticbeanstalk-production-dashboard.png"
-
+ogtype = "article"
 tags = [ "aws", "elasticbeanstalk", "golang", "go" ]
 +++
 

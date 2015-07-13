@@ -2,6 +2,7 @@
 date = "2015-07-06T15:57:30-04:00"
 title = "My First Post"
 type = "post"
+ogtype = "article"
 +++
 
 For years I have been thinking about creating a spot where I can post articles about programming and technology in general. But every attempt to do so have result in complete failure, mostly due to the hassle of setting up maintaining a blog that can be easily updated. I've never been a fan of Wordpress and have experimented with other solutions like Octopress and Jekyll, but none of them felt right to me.

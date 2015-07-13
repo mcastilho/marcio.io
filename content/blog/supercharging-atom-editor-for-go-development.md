@@ -2,7 +2,7 @@
 date = "2015-07-07T15:24:59-04:00"
 title = "Supercharging the Atom Editor for Go Development"
 type = "post"
-
+ogtype = "article"
 +++
 
 After years of using Integrated Development Environments (IDE) during my Windows progamming days, such as Visual Basic IDE, Borland Delphi IDE, Visual C++ and more recent Visual Studio, I have ditched all of those when I switched to Mac OS X about 10 years ago.

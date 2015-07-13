@@ -3,7 +3,8 @@ date = "2015-07-12T13:50:25-04:00"
 title = "Singleton Pattern in Go"
 type = "post"
 tags = [ "golang", "go", "singleton", "thread-safety" ]
-ogimage = "/img/gopher.png"
+ogimage = "http://marcio.io/img/gopher.png"
+ogtype = "article"
 +++
 
 The Go Language growth has been phenomenal in the last few years, and is attracting language converts from all walks of life. There has been a lot articles recently about companies switching from Ruby, and experiencing the new world of Go and it's parallel and concurrent approach to problems.  
@@ -169,7 +170,7 @@ func (o *Once) Do(f func()) {
 What this means is the we can leverage the awesome Go sync package to invoke a method exactly only once. Therefore, we can invoke the ```once.Do()``` method like this:
 
 ```go
-once.Do(func {
+once.Do(func() {
     // perform safe initialization here
 })
 ```
@@ -190,7 +191,7 @@ var instance *singleton
 var once sync.Once
 
 func GetInstance() *singleton {
-    once.Do(func {
+    once.Do(func() {
         instance = &singleton{}
     })
     return instance
